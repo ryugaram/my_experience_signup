@@ -1,12 +1,13 @@
 package com.ryu.vo;
 
-public class SignupVO {
+public class LoginVO {
 
 	private int lno;
 	private String lname;
+	private String lid;
+	private String lpw;
 	private int lage;
 	private String lemail;
-	private String lsex;
 	private String ltel;
 	private String lhome;
 	public int getLno() {
@@ -33,12 +34,7 @@ public class SignupVO {
 	public void setLemail(String lemail) {
 		this.lemail = lemail;
 	}
-	public String getLsex() {
-		return lsex;
-	}
-	public void setLsex(String lsex) {
-		this.lsex = lsex;
-	}
+	
 	public String getLtel() {
 		return ltel;
 	}
@@ -51,11 +47,26 @@ public class SignupVO {
 	public void setLhome(String lhome) {
 		this.lhome = lhome;
 	}
+	
+	
+	public String getLid() {
+		return lid;
+	}
+	public void setLid(String lid) {
+		this.lid = lid;
+	}
+	public String getLpw() {
+		return lpw;
+	}
+	public void setLpw(String lpw) {
+		this.lpw = lpw;
+	}
 	@Override
 	public String toString() {
-		return "SignupVO [lno=" + lno + ", lname=" + lname + ", lage=" + lage + ", lemail=" + lemail + ", lsex=" + lsex
-				+ ", ltel=" + ltel + ", lhome=" + lhome + "]";
+		return "LoginVO [lno=" + lno + ", lname=" + lname + ", lid=" + lid + ", lpw=" + lpw + ", lage=" + lage
+				+ ", lemail=" + lemail + ", ltel=" + ltel + ", lhome=" + lhome + "]";
 	}
+	
 	
 	
 	
