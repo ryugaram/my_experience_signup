@@ -10,7 +10,6 @@ lno int not null primary key AUTO_INCREMENT,
 lid char(30) not null,
 lpw char(30) not null,
 lname char(10) not null,
-lage int(5) not null,
 lemail char(50) not null,
 lsex char(5) not null,
 ltel char(25) not null,
@@ -24,14 +23,45 @@ lhome char(50) not null); -->
 
 <select id="list" resultType="com.ryu.vo.LoginVO">
 select 
-lid,lname,lage,lemail,ltel,lhome
+lno,lid,lname,lemail,ltel,lhome
 from 
 login
 </select>
 
 <select id="join" resultType="com.ryu.vo.LoginVO">
  insert into login(lid,lpw,lname,lemail,ltel,lhome)
- values(#{lid},#{lpw},#{lname},#{lemail},#{ltel},#{lhome})
+ values(#{lid},SHA1(#{lpw}),#{lname},#{lemail},#{ltel},#{lhome})
+</select>
+
+<select id="info" parameterType="int" resultType="com.ryu.vo.LoginVO">
+ select 
+  lno,lid,lname,lemail,ltel,lhome
+ from 
+  login
+ where
+  lno = #{lno}   
+</select>
+
+<select id="update" resultType="com.ryu.vo.LoginVO">
+update login
+set
+  lname=#{lname},
+  lemail=#{lemail},
+  ltel=#{ltel},
+  lpw=SHA1(#{lpw}),
+  lhome=#{lhome}
+where lno=#{lno}
+</select>
+
+
+<select id="delete" parameterType="int">
+  delete
+  from login
+ where lno = #{lno}
+</select>
+
+<select id="login" resultType="int">
+select count(case when lid=#{lid} and lpw=SHA1(${lpw}) then 1 end) from login;
 </select>
 
 <!-- <select id="write" resultType="com.ryu.vo.MemberVO">

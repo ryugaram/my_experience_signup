@@ -32,4 +32,35 @@ public class LoginDaoImpl implements LoginDao {
 	}
 
 
+	@Override
+	public LoginVO info(int lno) {
+		
+		return sql.selectOne(namespace+".info",lno);
+	}
+
+
+	@Override
+	public void modify(LoginVO vo) {
+		
+		sql.update(namespace+".update",vo);
+	}
+
+
+	@Override
+	public void delete(int lno) {
+		
+		sql.delete(namespace+".delete",lno);
+	}
+
+
+	@Override
+	public int login() {
+		
+		return sql.selectOne(namespace+".login");
+	}
+
+
+
+
+
 }

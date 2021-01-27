@@ -10,6 +10,16 @@ public interface LoginService {
 
 	void join(LoginVO vo);
 
+	LoginVO info(int lno);
+
+	void modify(LoginVO vo);
+
+	void delete(int lno);
+
+	int login();
+
+
+
 	
 
 }

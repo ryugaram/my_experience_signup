@@ -28,5 +28,38 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 
+	@Override
+	public LoginVO info(int lno) {
+		
+		return dao.info(lno);
+	}
+
+
+	@Override
+	public void modify(LoginVO vo) {
+		
+		dao.modify(vo);
+	}
+
+
+	@Override
+	public void delete(int lno) {
+		
+		dao.delete(lno);
+	}
+
+
+	@Override
+	public int login() {
+		
+		return dao.login();
+	}
+
+
+
+
+	
+
+
 
 }

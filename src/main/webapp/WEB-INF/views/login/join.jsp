@@ -44,8 +44,8 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="small mb-1" for="inputLastName">age</label>
-                                                        <input class="form-control py-4" id="inputLastName" name="lage" type="text" placeholder="Enter age" />
+                                                        <label class="small mb-1" for="inputLastName">ID</label>
+                                                        <input class="form-control py-4" id="inputLastName" name="lid" type="text" placeholder="Enter ID" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -106,7 +106,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="login.html">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="/login/login">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>

@@ -6,7 +6,6 @@ public class LoginVO {
 	private String lname;
 	private String lid;
 	private String lpw;
-	private int lage;
 	private String lemail;
 	private String ltel;
 	private String lhome;
@@ -22,12 +21,7 @@ public class LoginVO {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-	public int getLage() {
-		return lage;
-	}
-	public void setLage(int lage) {
-		this.lage = lage;
-	}
+	
 	public String getLemail() {
 		return lemail;
 	}
@@ -63,8 +57,8 @@ public class LoginVO {
 	}
 	@Override
 	public String toString() {
-		return "LoginVO [lno=" + lno + ", lname=" + lname + ", lid=" + lid + ", lpw=" + lpw + ", lage=" + lage
-				+ ", lemail=" + lemail + ", ltel=" + ltel + ", lhome=" + lhome + "]";
+		return "LoginVO [lno=" + lno + ", lname=" + lname + ", lid=" + lid + ", lpw=" + lpw + ", lemail=" + lemail
+				+ ", ltel=" + ltel + ", lhome=" + lhome + "]";
 	}
 	
 	

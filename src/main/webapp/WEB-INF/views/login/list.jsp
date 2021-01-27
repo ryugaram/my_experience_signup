@@ -16,7 +16,7 @@
  <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Member table
+                               account
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -26,7 +26,6 @@
   <tr>
    <th>id</th>  
    <th>이름</th>
-   <th>나이</th>
    <th>이메일</th>
    <th>전화번호</th>
    <th>주소</th>
@@ -39,10 +38,9 @@
  <tr>
 
   <td>
-  	<a href="/login/info?lno=${list.lno}"> ${list.lid} </a>
+  	<a href="/login/info?lno=${list.lno}">${list.lid} </a>
   	</td>
   <td>${list.lname}</td>
-  <td>${list.lage}</td>
   <td>${list.lemail}</td>
   <td>${list.ltel}</td>
   <td>${list.lhome}</td> 
