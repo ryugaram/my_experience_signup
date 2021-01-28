@@ -16,7 +16,7 @@ public interface LoginDao {
 
 	void delete(int lno);
 
-	int login();
+	int login(LoginVO vo);
 
 
 

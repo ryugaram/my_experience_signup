@@ -54,9 +54,9 @@ public class LoginDaoImpl implements LoginDao {
 
 
 	@Override
-	public int login() {
+	public int login(LoginVO vo) {
 		
-		return sql.selectOne(namespace+".login");
+		return sql.selectOne(namespace+".login",vo);
 	}
 
 

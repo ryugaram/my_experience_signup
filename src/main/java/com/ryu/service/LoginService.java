@@ -16,7 +16,7 @@ public interface LoginService {
 
 	void delete(int lno);
 
-	int login();
+	int login(LoginVO vo);
 
 
 

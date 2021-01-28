@@ -50,10 +50,12 @@ public class LoginServiceImpl implements LoginService {
 
 
 	@Override
-	public int login() {
+	public int login(LoginVO vo) {
 		
-		return dao.login();
+		return dao.login(vo);
 	}
+
+
 
 
 

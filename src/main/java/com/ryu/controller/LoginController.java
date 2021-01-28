@@ -1,6 +1,10 @@
 package com.ryu.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,13 +28,18 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login",method = RequestMethod.POST)
-	public String postlogin(Model model/* ,@RequestParam ("lno") int lno */) {
-		int count=service.login();
-		model.addAttribute("count", count);
+	public String postlogin(Model model ,LoginVO vo,HttpServletResponse response) throws IOException {
+		int count=(int)service.login(vo);
 		
-		/* model.addAttribute("lno", lno); */
-		
-		return "/login/list";
+		if(count==1)
+			return "redirect:/login/list";
+		else {
+		response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<script>alert('ID 혹은 비밀번호를 확인해주세요'); history.go(-1);</script>");
+        out.flush();
+        }
+		return null;
 	}
 	
 	

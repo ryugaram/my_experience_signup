@@ -60,14 +60,10 @@ where lno=#{lno}
  where lno = #{lno}
 </select>
 
-<select id="login" resultType="int">
+<select id="login" resultType="int" parameterType="com.ryu.vo.LoginVO">
 select count(case when lid=#{lid} and lpw=SHA1(${lpw}) then 1 end) from login;
 </select>
 
-<!-- <select id="write" resultType="com.ryu.vo.MemberVO">
- insert into member_test(name,age,sex,tel,home)
- values(#{name},#{age},#{sex},#{tel},#{home})
-</select> -->
 
 
 </mapper>
