@@ -12,6 +12,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="/resources/js/scripts.js"></script>
+        
         <!--다음 주소 api  -->
     	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     	<script src="/resources/js/juso.js"></script>
@@ -22,7 +23,57 @@
   background-color: #e4ebf3 !important ;
 	}
     </style>
-    
+    <script>function check_input() {
+
+        if (!document.check.lid.value)
+        // login_form 이름을 가진 form 안의 id_val 의 value가 없으면
+        {
+            alert("아이디를 입력하세요!");
+            document.check.lid.focus();
+            // 화면 커서 이동
+           return false;
+        }
+        
+         if (!document.check.lpw.value)
+        {
+            alert("비밀번호를 입력하세요!");
+            document.check.lpw.focus();
+            // 화면 커서 이동
+            return false;
+        }
+         if (!document.check.lname.value)
+        {
+            alert("이름을 입력하세요!");
+            document.check.lname.focus();
+            // 화면 커서 이동
+           return false;
+        }
+         if (!document.check.lemail.value)
+        {
+            alert("이메일을 입력하세요!");
+            document.check.lemail.focus();
+            // 화면 커서 이동
+            return false;
+        }
+        if (!document.check.lhome.value)
+        {
+            alert("집주소를 입력하세요!");
+            document.check.lhome.focus();
+            // 화면 커서 이동
+            return false;
+        }
+         if (!document.check.ltel.value)
+        {
+            alert("전화번호 입력하세요!");
+            document.check.ltel.focus();
+            // 화면 커서 이동
+            return false;
+        }
+        else{
+        	check.submit();
+       	}
+     }
+    </script>
     </head>
     <body class="bg-primary1">
         <div id="layoutAuthentication">
@@ -34,7 +85,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                                     <div class="card-body">
-                                        <form method="post">
+                                        <form method="post" name="check">
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -100,7 +151,7 @@
                                             </div>
                                          
                                         <!--  <button type="submit">작성</button> -->
-                                         <button class="btn btn-primary btn-block" type="submit" onclick="location.href='/login/list'">Create Account</button>
+                                         <button class="btn btn-primary btn-block" type= "button" onclick="check_input()">Create Account</button>
                                             
                                           <!--   <a class="btn btn-primary btn-block" href="/login/list">Create Account</a></div> -->
                                         </form>

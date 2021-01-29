@@ -61,7 +61,7 @@ public class LoginController {
 		
 		service.join(vo);
 		
-		return "redirect:/login/list";
+		return "redirect:/login/login";
 	}
 	
 	@RequestMapping("/info")
